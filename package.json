@@ -1,19 +1,20 @@
 {
-  "name": "app",
+  "name": "hugo-mitsumori",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "dev": "npm run lint && npm run test"
+    "dev": "npm run lint && npm run test",
+    "test": "vue-cli-service test:unit"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
-    "vue-router": "^3.2.0"
+    "vue-router": "^3.2.0",
+    "vuetify": "^2.2.11"
   },
   "devDependencies": {
     "@types/chai": "^4.2.11",
@@ -39,9 +40,12 @@
     "eslint-plugin-vue": "^6.2.2",
     "lint-staged": "^9.5.0",
     "node-sass": "^4.12.0",
+    "sass": "^1.19.0",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
-    "vue-template-compiler": "^2.6.11"
+    "vue-cli-plugin-vuetify": "~2.0.7",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.3.0"
   },
   "gitHooks": {
     "pre-commit": "docker-compose run app npm run dev"

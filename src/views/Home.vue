@@ -1,18 +1,24 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app class="home">
+    <navigation-bar :menu="false" />
+    <v-card min-width="320" max-width="640" class="mx-auto mt-6 pa-4">
+      <header class="bold mb-2">Olá Mundo!</header>
+      <article v-html="summary" />
+    </v-card>
+  </v-app>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<script lang="ts">
+  import { summary } from '@/data/texts'
+  import NavigationBar from '@/components/NavigationBar.vue'
+  import Vue from 'vue'
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+  export default Vue.extend({
+    components: { NavigationBar },
+    data: function() {
+      return {
+        summary: summary,
+      }
+    },
+  })
 </script>
